@@ -1,0 +1,12 @@
+{
+  "name": "jjscrape",
+  "version": "1.0.0",
+  "description": "do bad things on the internet",
+  "main": "scrape.js",
+  "scripts": {},
+  "author": "joon",
+  "license": "ISC",
+  "dependencies": {
+    "website-scraper": "^3.3.2"
+  }
+}
