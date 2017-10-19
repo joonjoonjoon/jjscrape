@@ -46,7 +46,14 @@ var nextscrape = function() {
 var exporturls = function() {
 	console.log("WRITING FILE");
 	foundurls = util.sort_unique(foundurls);
-	fs.writeFileSync(__dirname + "/../output/foundurls.json",JSON.stringify(foundurls,null, '\t'));
+
+	// make folder
+	var dir = __dirname + "/../output/";
+	if (!fs.existsSync(dir)){
+		fs.mkdirSync(dir);
+	}
+	// save file
+	fs.writeFileSync(dir + "foundurls.json",JSON.stringify(foundurls,null, '\t'));
 };
 
 // find urls in the raw HTML code dump

@@ -40,7 +40,15 @@ var nextScrape = function() {
 // save out all the good stuff
 var exportcorpus = function () {
 	console.log("WRITING CORPUS");
-	fs.writeFileSync(__dirname + "/../output/corpus.txt",corpus);			
+	
+	// make folder
+	var dir = __dirname + "/../output/";
+	if (!fs.existsSync(dir)){
+		fs.mkdirSync(dir);
+	}
+	
+	// save file
+	fs.writeFileSync(dir + "corpus.txt",corpus);			
 };
 	
 // process raw HTML dump
