@@ -1,0 +1,11 @@
+{
+  "name": "jjscrape",
+  "version": "1.0.0",
+  "description": "split your tv or movie scripts",
+  "main": "scrape.js",
+  "scripts": {},
+  "author": "joon",
+  "license": "ISC",
+  "dependencies": {
+  }
+}
