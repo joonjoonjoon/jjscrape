@@ -2,18 +2,23 @@
 
 var fs = require('fs');
 
-// grab urls from sources.json
+// read source
 var source = fs.readFileSync(__dirname +"/../input/source.txt", "utf8");
+
+// split into array
 var lines = source.split('\n');
-var getCharacterRegex = /\w+(?=:)/g;
+
+// create empty objects to push results in
 var dictionary = {};
 var character = "empty";
 
+// loop over lines
 for (var index = 0; index < lines.length; index++) {
 	var line = lines[index];
+
+	// if we can split on ":", start a  character entry;
 	var split = line.split(":");
 
-	// if we can split on ":", start a new character entry;
 	if(split.length > 1)
 	{
 		character = split[0];
@@ -24,8 +29,9 @@ for (var index = 0; index < lines.length; index++) {
 
 	// make sure an empty dictionary exists before pushign to it
 	if(!dictionary[character])
-	dictionary[character] = [];
+		dictionary[character] = [];
 
+	// add line to character
 	dictionary[character].push(line);
 }
 
