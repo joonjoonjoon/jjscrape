@@ -3,6 +3,7 @@
 var fs = require('fs');
 var Scraper = require('node-scraper');
 var htmlToText = require('html-to-text');
+var sleep = require('thread-sleep');
 
 // grab urls from sources.json
 var sources = JSON.parse(fs.readFileSync(__dirname + "/../input/sources.json", "utf8"));
@@ -13,6 +14,10 @@ var currenturl = 0;
 // it's a weird kind of for loop, that is called through an anonymous, asynchronous function 
 // apart from the first time
 var nextScrape = function() {
+	// sleep for 1 second, to prevent getting banned :)
+	console.log("(sleeping for 1 s, zzzzZzzzzzz)");
+	sleep(1000);
+
 	// detect whether or not we should end
 	if(currenturl >= sources.length) 
 	{

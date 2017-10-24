@@ -8,6 +8,7 @@
   "license": "ISC",
   "dependencies": {
     "html-to-text": "^3.3.0",
-    "node-scraper": "^1.0.13"
+    "node-scraper": "^1.0.13",
+    "thread-sleep": "^2.0.0"
   }
 }
