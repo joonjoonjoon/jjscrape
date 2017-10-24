@@ -7,6 +7,7 @@
   "author": "joon",
   "license": "ISC",
   "dependencies": {
+    "thread-sleep": "^2.0.0",
     "website-scraper": "^3.3.2"
   }
 }

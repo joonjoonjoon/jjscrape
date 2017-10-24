@@ -4,6 +4,7 @@ var fsext = require("./jjFSext.js");
 var util = require("./util.js");  
 var fs = require('fs');
 var scrape = require('website-scraper');
+var sleep = require('thread-sleep');
 
 // grab urls from sources.json
 var sources = JSON.parse(fs.readFileSync(__dirname +"/../input/sources.json", "utf8"));
@@ -14,6 +15,10 @@ var foundurls = [];
 // it's a weird kind of for loop, that is called through an anonymous, asynchronous function 
 // apart from the first time
 var nextscrape = function() {
+	// sleep for 1 second, to prevent getting banned :)
+	console.log("(sleeping for 1 s, zzzzZzzzzzz)");
+	sleep(1000);
+
 	// for some reason, this scraper rudely DEMANDS the output folder to NOT EXIST
 	// so I cobbled together a recursive delete function
 	// use at own risk
